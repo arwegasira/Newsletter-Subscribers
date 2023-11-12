@@ -11,7 +11,7 @@ const connect = require('./db/connect')
 
 //middleware, not found , error handler
 const notFound = require('./Middleware/notFoundMiddleware')
-const errorHandler = require('./Middleware/errorHandler')
+const errorHandler = require('./Middleware/ErrorHandler')
 
 app.use(express.json())
 
