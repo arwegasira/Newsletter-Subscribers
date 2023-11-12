@@ -14,7 +14,7 @@ const addSubscriber = async (req, res, next) => {
   // check if subscriber exits already
   const exist = await Subscriber.findOne({ email: email })
   if (exist) throw new BadRequestError('You are already a subscriber.')
-  const subscriber = new Subscriber({ fname, lname, email })
+  const subscriber = new Subscriber({ fName, lName, email })
   await subscriber.save()
   //send notification email to subscriber
   sendEmail()
