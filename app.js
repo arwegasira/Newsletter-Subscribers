@@ -2,6 +2,7 @@ const express = require('express')
 
 require('dotenv').config()
 require('express-async-errors')
+const cors = require('cors')
 const app = express()
 
 const port = process.env.PORT || 80
@@ -19,7 +20,7 @@ app.use(express.json())
 const subscribe = require('./Routes/subscriber')
 
 //use api routes
-app.use('/api/v1', subscribe)
+app.use('/api/v1', cors(), subscribe)
 app.use(notFound)
 app.use(errorHandler)
 
