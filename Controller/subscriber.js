@@ -10,7 +10,7 @@ const {
 
 const sendEmail = require('../utils/sendMail')
 const addSubscriber = async (req, res, next) => {
-  const { fname, lname, email } = req.body
+  const { fName, lName, email } = req.body
   // check if subscriber exits already
   const exist = await Subscriber.findOne({ email: email })
   if (exist) throw new BadRequestError('You are already a subscriber.')
