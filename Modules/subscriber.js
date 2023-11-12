@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const subscribers = new Schema({
-  fname: {
+  fName: {
     type: String,
     required: true,
   },
-  lname: {
+  lName: {
     type: String,
     required: true,
   },
