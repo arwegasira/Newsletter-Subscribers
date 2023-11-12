@@ -8,6 +8,7 @@ const {
   CustomError,
 } = require('../Error')
 
+const sendEmail = require('../utils/sendMail')
 const addSubscriber = async (req, res, next) => {
   const { fname, lname, email } = req.body
   // check if subscriber exits already
@@ -16,7 +17,7 @@ const addSubscriber = async (req, res, next) => {
   const subscriber = new Subscriber({ fname, lname, email })
   await subscriber.save()
   //send notification email to subscriber
-
+  sendEmail()
   res.status(StatusCodes.OK).json({ msg: 'Successfully registered.' })
 }
 
