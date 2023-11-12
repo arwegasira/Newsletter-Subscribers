@@ -17,7 +17,7 @@ const addSubscriber = async (req, res, next) => {
   const subscriber = new Subscriber({ fName, lName, email })
   await subscriber.save()
   //send notification email to subscriber
-  sendEmail()
+  sendEmail(email.trim())
   res.status(StatusCodes.OK).json({ msg: 'Successfully registered.' })
 }
 
